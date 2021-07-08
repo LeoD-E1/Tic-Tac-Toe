@@ -1,10 +1,9 @@
 // Tablero del juego 
 const board = [
-  [1, 1, 2],
-  [1, 2, 1],
-  [2, 2, 0]
+  [2, 1, 1],
+  [2, 2, 1],
+  [1, 2, 1]
 ]
-
 // definiendo las posiciones ganadoras
 const positionWin = [
   //Horizontal
@@ -19,14 +18,12 @@ const positionWin = [
   [0, 4, 8],
   [2, 4, 6]
 ]
-
 /*
   Funcion para unir el tablero
   con el fin de que todas las 
   posiciones esten en un solo 
   array 
 */
-
 const joinBoard = (board) => {
   let boardJoin = []
   for (let o in board) {
@@ -34,48 +31,41 @@ const joinBoard = (board) => {
   }
   return boardJoin
 }
-
 /*
   Funcion para que con un array de posicion
   rastree la posicion de cada numero en ese
   indice.
 */
-
 const findWithPosition = (arr, tablero) => {
   let foundArray = []
+  // Verificar si hay un cero en el tablero
+  const zero = tablero.includes(0)
+  if (zero) return console.log(-1)
+
   for (let k in arr) {
-    for (let i = 0; i <= tablero.length; i++) {
+    for (let i = 0; i <= 8; i++) {
       foundArray.push(tablero[arr[k]])
-      if (foundArray !== 0 && foundArray) {
-        if (foundArray[0] === foundArray[1] && foundArray[1] === foundArray[2]) {
-          // Verificar cual es el valor del mismo
-          validationWinner(foundArray)
-        } else { //Empate
-          console.log(0, 'Empate')
-        }
-      } else {
-        return console.log(-1, 'El juego sigue');
-        break
-      }
       break
     }
   }
-  return foundArray
+  validationWinner(foundArray)
 }
 
 const validationWinner = (arr) => {
-  switch (arr[0]) {
-    case 1:
-      return console.log('1, gano X');
-    case 2:
-      return console.log('2, Gano O')
-    default:
-      break
+  if (arr[0] === arr[1] && arr[1] === arr[2]) {
+    switch (arr[0]) {
+      case 1:
+        return console.log(1, 'Ganaron X')
+      case 2:
+        return console.log(2, 'Ganaron O')
+      default:
+        break
+    }
   }
 }
 
 const iteratePositons = (positions) => {
-  for (let z in positions) {
+  for (let z = 0; z <= 7; z++) {
     findWithPosition(positions[z], joinBoard(board))
   }
 }
