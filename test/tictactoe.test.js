@@ -4,10 +4,10 @@ import { expect } from 'chai'
 
 
 describe('Test cases of tictactoe', () => {
-    it('passes all tests', () => {
-        testCases.forEach(testCase => {
-            const result = iteratePositions(testCase.board)
-            expect(result).to.equal(testCase.expectedResult)
-        })
-    });
+  it('passes all tests', () => {
+    testCases.forEach(testCase => {
+      const result = iteratePositions(testCase.board)
+      expect(result).to.equal(testCase.expectedResult)
+    })
+  });
 })
