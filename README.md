@@ -1,19 +1,19 @@
 # Tic-Tac-Toe
 
 This project was a challenge to enter in a company.His goal is return the state of a board with the following form
-[
-  [1, 2, 0],
-  [2, 1, 2],
-  [0, 2, 1]
-]
+* [
+  * [1, 2, 0],
+  * [2, 1, 2],
+  * [0, 2, 1]
+* ]
 
 Then return, 1 if x won, 2 if O won, -1 if the game continues, 0 if a tie ocurred
 
-The rules are:
-if there is 0 in the board and no one won, the result should be -1, which means game is now playing
-if there is 0 in the board or not and X won, the result should be 1.
-if there is 0 in the board or not and O won, the result should be 2.
-if there is no 0 in the board and no one won, the result should be 0, which means game is a tie.
+### The rules are:
+* if there is 0 in the board and no one won, the result should be -1, which means game is now playing
+* if there is 0 in the board or not and X won, the result should be 1.
+* if there is 0 in the board or not and O won, the result should be 2.
+* if there is no 0 in the board and no one won, the result should be 0, which means game is a tie.
 
 ## Begining 🚀
 
